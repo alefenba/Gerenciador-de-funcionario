@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from helloworld.views import IndexTemplateView,FuncionarioListView,FuncionarioCreateView
+from helloworld.views import FuncionarioUpdateView,FuncionarioDeleteView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    
+    path('', IndexTemplateView.as_view(template_name="index.html")),
+    path('/lista', FuncionarioListView.as_view(template_name="lista.html")),
+    path('/criar', FuncionarioCreateView.as_view(template_name="criar.html")),
+    path('/editar', FuncionarioUpdateView.as_view(template_name="editar.html")),
+    path('/excluir', FuncionarioDeleteView.as_view(template_name="excluir.html")),
+    path('admin/', admin.site.urls)
 ]
