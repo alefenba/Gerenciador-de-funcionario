@@ -7,6 +7,7 @@ from django.views.generic.list import ListView
 from helloworld.models import Funcionario
 from website.forms import InsereFuncionarioForm
 
+from helloworld.models import Funcionario
 
 class IndexTemplateView(TemplateView):
     template_name = 'index.html'
@@ -20,7 +21,7 @@ class FuncionarioListView(ListView):
 class FuncionarioCreateView(CreateView):
     template_name = "website/criar.html"
     model = Funcionario
-    from_class = InsereFuncionarioForm
+    form_class = InsereFuncionarioForm
     success_url = reverse_lazy(
         "website:lista_funcionarios"
     )

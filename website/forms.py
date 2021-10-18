@@ -1,13 +1,11 @@
 from django import forms
-from django.forms import fields
-
 from helloworld.models import Funcionario
 
-class InsereFuncionarioForm(forms.Form):
+class InsereFuncionarioForm(forms.ModelForm):
 
     class Meta:
         model = Funcionario
-        fields=[
+        fields= [
             'nome',
             'sobrenome',
             'cpf',
