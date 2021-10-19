@@ -20,7 +20,7 @@ from helloworld.views import FuncionarioUpdateView,FuncionarioDeleteView
 
 urlpatterns = [
     
-    path('', IndexTemplateView.as_view(template_name="index.html")),
+    path('', IndexTemplateView.as_view(template_name="website/index.html")),
     path('funcionario/cadastrar', FuncionarioCreateView.as_view(template_name="website/criar.html")),
     path('funcionario/editar', FuncionarioUpdateView.as_view(template_name="website/editar.html")),
     path('funcionario/excluir', FuncionarioDeleteView.as_view(template_name="website/excluir.html")),

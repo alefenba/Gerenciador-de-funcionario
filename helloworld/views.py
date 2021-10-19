@@ -10,13 +10,9 @@ from website.forms import InsereFuncionarioForm
 from helloworld.models import Funcionario
 
 class IndexTemplateView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'website/index.html'
 
 
-class FuncionarioListView(ListView):
-    template_name = "website/lista.html"
-    model = Funcionario
-    context_object_name = "funcionarios"
 
 class FuncionarioCreateView(CreateView):
     template_name = "website/criar.html"
@@ -44,3 +40,8 @@ class FuncionarioDeleteView(DeleteView):
     success_url = reverse_lazy(
         "website:lista_funcionarios"
     )
+    
+class FuncionarioListView(ListView):
+    template_name = "website/lista.html"
+    model = Funcionario
+    context_object_name = "funcionarios"
