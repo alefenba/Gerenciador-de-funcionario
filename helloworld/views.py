@@ -23,15 +23,19 @@ class FuncionarioCreateView(CreateView):
     )
     
 class FuncionarioUpdateView(UpdateView):
-    template_name = 'website/editar.html'
+    template_name = 'editar.html'
     model = Funcionario
-    fields = [
-        'nome',
-        'sobrenome',
-        'cpf',
-        'tempo_de_servico',
-        'remuneracao'
-    ]
+    fields = ['__all__']
+    context_object_name= 'funcionario'
+
+    def get_object(self, queryset:None):
+        funcionario=None
+
+        id = self.kwargs.get(self.pk_url_kwarg)
+        if id is not None:
+            funcionario = Funcionario.objects.filter(id=id).first()
+        return funcionario
+
 
 class FuncionarioDeleteView(DeleteView):
     template_name = "website/excluir.html"

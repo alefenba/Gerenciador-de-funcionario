@@ -3,7 +3,7 @@
 <!-- Bloco que define o <title></title> da nossa pagina -->
 {% block title%} Pagina Inicial {% endblock %}
 <!-- Bloco de conteudo da nossa pagina -->
-{% block conteudo %}
+{% block content %}
 <div class="container">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -11,9 +11,9 @@
                 <div class="card-body">
                     <h5 class="card title">Cadastrar Funcionario </h5>
                     <p class="card-tex">
-                        Cadastre aqui um novo<code>Funcionario</code>.
+                        Cadastre aqui um novo<code> Funcionario </code>.
                     </p>
-                    <a href="{% url 'website:cadastro_funcionario' %}" class="btn btn-primary">
+                    <a href="{% url 'cadastro_funcionario' %}" class="btn btn-primary">
                         Novo Funcionario
                     </a>
                 </div>
@@ -26,7 +26,7 @@
                     <p class="card-text">
                         Veja aqui a lista de <code>Funcionarios</code> cadastrados.
                     </p>
-                    <a href="{% url 'website:lista_funcionarios' %}"
+                    <a href="{% url 'lista_funcionarios' %}"
                     class="btn btn-primary">
                     Vá para Lista
                     </a>

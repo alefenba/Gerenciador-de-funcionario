@@ -1,7 +1,68 @@
-<form method ="post">
-    {% csrf_token %}
+{% extends "website/_layouts/base.html" %}
 
-    {{ form }}
+{% load widget_tweaks %}
 
-    <button type= "submit">Cadastrar</button>
-</form>
+{% block title %} Cadastro de Funcionarios {% endblock %}
+
+{% block conteudo %}
+<div clas="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"> Cadastro de Funcionarios </h5>
+                    <p class="card-text">
+                        Complete o formulario abaixo para cadastrar um novo <code>Funcionario </code>
+                    </p>
+                    <form method="post">
+                        <!--Não se esquecer da tag de segurança -->
+                        {%csrf_token%}
+
+                        <!-- nome -->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nome</span>
+                            </div>
+                        {% render_field form.nome class+="form-control"%}
+                        </div>
+
+                        <!--Sobrenome-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Sobrenome</span>
+                            </div>
+                            {% render_field form.sobrenome class+="form-control" %}
+                        </div>
+
+                        <!--CPF-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">CPF</span>
+                            </div>
+                            {% render_field form.cpf class+="form-control" %}
+                        </div>
+
+                        <!--Tempo de Serviço-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tempo de Serviço</span>
+                            </div>
+                            {% render_field form.tempo_de_servico class+="form-control" %}
+                        </div>
+
+                        <!--Remuneração-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Remuneração</span>
+                            </div>
+                            {% render_field form.remuneracao class+="form-control" %}
+                        </div>
+
+                        <button class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

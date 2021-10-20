@@ -19,11 +19,10 @@ from helloworld.views import IndexTemplateView,FuncionarioListView,FuncionarioCr
 from helloworld.views import FuncionarioUpdateView,FuncionarioDeleteView
 
 urlpatterns = [
-    
-    path('', IndexTemplateView.as_view(template_name="website/index.html")),
-    path('funcionario/cadastrar', FuncionarioCreateView.as_view(template_name="website/criar.html")),
-    path('funcionario/editar', FuncionarioUpdateView.as_view(template_name="website/editar.html")),
-    path('funcionario/excluir', FuncionarioDeleteView.as_view(template_name="website/excluir.html")),
-    path('funcionario/lista', FuncionarioListView.as_view(template_name="website/lista.html")),
+    path('', IndexTemplateView.as_view(),name='index'),
+    path('funcionario/cadastrar', FuncionarioCreateView.as_view(),name='cadastro_funcionario'),
+    path('funcionario/',FuncionarioListView.as_view(),name="lista_funcionarios"),
+    path('funcionario/<id>', FuncionarioUpdateView.as_view(),name='atualiza_funcionario'),
+    path('funcionario/excluir/<pk>', FuncionarioDeleteView.as_view(),name='deleta_funcionario'),
     path('admin/', admin.site.urls)
 ]
