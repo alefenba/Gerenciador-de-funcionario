@@ -1,0 +1,27 @@
+{% extends "website/_layouts/base.html" %}
+
+{% block title %}Pagina Inicial{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Exclusão de Funcionario</h5>
+            <p class="card-text">
+                Você tem certez de que quer excluir o funcionairo
+                <b>{{ funcionario.nome }}</b>?
+            </p>
+            <form method="post">
+                {% csrf_token %}
+                <hr/>
+                <div class="text-right">
+                    <a href="{% url 'website:lista_funcionarios' %}" class="btn btn-outline-danger">
+                        Cancelar
+                    </a>
+                <button class="btn btn-danger">Excluir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
