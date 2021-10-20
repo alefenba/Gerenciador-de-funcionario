@@ -31,11 +31,11 @@
                                 <td>{{ f.tempo_de_servico}}</td>
                                 <td>{{ f.remuneracao}}</td>
                                 <td>
-                                    <a href="{% url 'website:atualiza_funcionario' pk=f.id %}" 
+                                    <a href="{% url 'atualiza_funcionario' pk=f.id %}" 
                                     class="btn btn-info">
                                     Atualizar
                                 </a>
-                                <a href="{% url 'website:deleta_funcionario' pk=f.id %}"
+                                <a href="{% url 'deleta_funcionario' pk=f.id %}"
                                 class="btn btn-outline-danger">
                                 Excluir                            
                                 </a>
@@ -51,7 +51,7 @@
                     {% endif %}
                     <hr/>
                     <div class="text-right">
-                        <a class="btn btn-primary" href="{% url 'website:cadastro_funcionario' %}">
+                        <a class="btn btn-primary" href="{% url 'cadastro_funcionario' %}">
                             CAdastrar Funcionario
                         </a>
                     </div>
