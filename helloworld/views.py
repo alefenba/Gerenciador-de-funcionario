@@ -18,32 +18,21 @@ class FuncionarioCreateView(CreateView):
     template_name = "website/criar.html"
     model = Funcionario
     form_class = InsereFuncionarioForm
-    success_url = reverse_lazy(
-        "website:lista_funcionarios"
-    )
+    success_url = reverse_lazy("lista_funcionarios")
     
 class FuncionarioUpdateView(UpdateView):
-    template_name = 'editar.html'
+    template_name = 'website/editar.html'
     model = Funcionario
-    fields = ['__all__']
+    fields = '__all__'
     context_object_name= 'funcionario'
-
-    def get_object(self, queryset:None):
-        funcionario=None
-
-        id = self.kwargs.get(self.pk_url_kwarg)
-        if id is not None:
-            funcionario = Funcionario.objects.filter(id=id).first()
-        return funcionario
+    success_url = reverse_lazy("lista_funcionarios")
 
 
 class FuncionarioDeleteView(DeleteView):
     template_name = "website/excluir.html"
     model = Funcionario
     context_objects_name = 'funcionario'
-    success_url = reverse_lazy(
-        "website:lista_funcionarios"
-    )
+    success_url = reverse_lazy("lista_funcionarios")
     
 class FuncionarioListView(ListView):
     template_name = "website/lista.html"

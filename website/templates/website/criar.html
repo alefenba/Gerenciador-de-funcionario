@@ -12,18 +12,18 @@
                 <div class="card-body">
                     <h5 class="card-title"> Cadastro de Funcionarios </h5>
                     <p class="card-text">
-                        Complete o formulario abaixo para cadastrar um novo <code>Funcionario </code>
+                        Complete o formulario abaixo para cadastrar um novo <code> Funcionario </code>
                     </p>
                     <form method="post">
                         <!--Não se esquecer da tag de segurança -->
-                        {%csrf_token%}
+                        {% csrf_token %}
 
                         <!-- nome -->
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Nome</span>
                             </div>
-                        {% render_field form.nome class+="form-control"%}
+                            {% render_field form.nome class+="form-control" %}
                         </div>
 
                         <!--Sobrenome-->
