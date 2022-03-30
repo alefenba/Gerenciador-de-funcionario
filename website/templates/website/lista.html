@@ -11,54 +11,51 @@
                     <h5 class="card-title">Lista de Funcionario</h5>
 
                     {% if funcionarios|length > 0 %}
-                    <p class="card-text"> 
-                        Aqui está a lista de <code>Funcionario</code> cadastrados.
-                    </p>
+                    	<p class="card-text"> 
+                        	Aqui está a lista de <code>Funcionario</code> cadastrados.
+                    	</p>
                     
-                    <table class="table">
-                        <thead class="thead-dark">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Sobrenome</th>
-                            <th>Tempo de Serviço</th>
-                            <th>Remuneração</th>
-                            <th>Ações</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for funcionario in funcionarios %}
-                            <tr>
-                                <td>{{ funcionario.id }}</td>
-                                <td>{{ funcionario.nome}}</td>
-                                <td>{{ funcionario.sobrenome}}</td>
-                                <td>{{ funcionario.tempo_de_servico}}</td>
-                                <td>{{ funcionario.remuneracao}}</td>
-                                <td>
-                                    <a href="{% url 'atualiza_funcionario' pk=funcionario.id %}" 
-                                    class="btn btn-primary">
-                                        Atualizar
-                                    </a>
-                                    <a href="{% url 'deleta_funcionario' pk=funcionario.id %}"
-                                    class="btn btn-danger">
-                                        Excluir                            
-                                    </a>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                {% else %}
-                    <div class="text-center mt-5 mb-5 jumbotron">
-                        <h5>Nenhum <code>Funcionario</code> cadastrado ainda.</h5>
-                    </div>
-                {% endif %}
-                    <hr/>
-                    <div class="text-right">
-                        <a class="btn btn-primary" href="{% url 'cadastro_funcionario' %}">
+                    	<table class="table">
+                        	<thead class="thead-dark">
+                        	<tr>
+                            		<th>Nome</th>
+                            		<th>Sobrenome</th>
+                            		<th>Tempo de Serviço</th>
+                            		<th>Remuneração</th>
+                            		<th>Ações</th>
+                        	</tr>
+                        	</thead>
+                        	<tbody>
+                        	{% for funcionario in funcionarios %}
+                            		<tr>
+                                		<td>{{ funcionario.id }}</td>
+                                		<td>{{ funcionario.nome}}</td>
+                                		<td>{{ funcionario.sobrenome}}</td>
+                                		<td>{{ funcionario.tempo_de_servico}}</td>
+                                		<td>{{ funcionario.remuneracao}}</td>
+                                		<td>
+                                    			<a href="{% url 'atualiza_funcionario' pk=funcionario.id %}" class="btn btn-primary">
+                                        		Atualizar
+                                    			</a>
+                                    			<a href="{% url 'deleta_funcionario' pk=funcionario.id %}"class="btn btn-danger">
+                                        		Excluir                            
+                                    			</a>
+                                		</td>
+                            		</tr>
+                        	{% endfor %}
+                        	</tbody>
+                    	</table>
+                	{% else %}
+                    	<div class="text-center mt-5 mb-5 jumbotron">
+                        	<h5>Nenhum <code> Funcionario </code> cadastrado ainda.</h5>
+                    	</div>
+                	{% endif %}
+                    	<hr/>
+                    	<div class="text-right">
+                        	<a class="btn btn-primary" href="{% url 'cadastro_funcionario' %}">
                             Cadastrar Funcionario
-                        </a>
-                    </div>
+                        	</a>
+                    	</div>
                 </div>
             </div>
         </div>

@@ -22,7 +22,7 @@ urlpatterns = [
     path('', IndexTemplateView.as_view(),name="index"),
     path('funcionario/cadastrar', FuncionarioCreateView.as_view(),name="cadastro_funcionario"),
     path('funcionario/',FuncionarioListView.as_view(),name="lista_funcionarios"),
-    path('funcionario/<id>', FuncionarioUpdateView.as_view(),name="atualiza_funcionario"),
-    path('funcionario/excluir/<id>', FuncionarioDeleteView.as_view(),name="deleta_funcionario"),
+    path('funcionario/<pk>', FuncionarioUpdateView.as_view(),name="atualiza_funcionario"),
+    path('funcionario/excluir/<pk>', FuncionarioDeleteView.as_view(),name="deleta_funcionario"),
     path('admin/', admin.site.urls)
 ]
