@@ -9,8 +9,6 @@ class InsereFuncionarioForm(forms.ModelForm):
             'nome',
             'sobrenome',
             'cpf',
-            'remuneracao'
+            'remuneracao',
+            'tempo_de_servico'
         ]
-
-        exclude = ['tempo_de_servico']
-        
